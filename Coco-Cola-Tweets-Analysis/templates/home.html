@@ -1,0 +1,12 @@
+<h4>Coco Cola Tweet Classification - Is advertisement or not</h4>
+
+<form action="/" method="POST">
+  <button name="get_random_tweet">Get Random Tweet and Analyse</button>
+</form>
+
+{% if data %}
+<h5> Tweet </h5>
+<span> {{ data.tweet }} </span>
+<h5> Is this an advertisement </h5>
+<span> {{ data.is_advertisement }} </span>
+{% endif %}
