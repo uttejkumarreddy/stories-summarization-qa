@@ -22,7 +22,7 @@ class BedtimeStories(scrapy.Spider):
             yield scrapy.Request(url,callback = self.parse_dir_contents)
                 
     def parse_dir_contents(self, response):
-        item =  CrawlerItem()
+        item =  StoryscraperItem()
 
         title = response.xpath("//div[@class = 'content-thin']/h1/text()").extract()
         lst_text = response.xpath("//article[@class = 'font-alt submission-content space-top-xs-md space-bottom-xs-lg']/p/text()").extract()

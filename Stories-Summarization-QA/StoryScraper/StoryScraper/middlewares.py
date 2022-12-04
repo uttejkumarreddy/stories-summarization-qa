@@ -108,21 +108,21 @@ from scrapy.utils.response import response_status_message
 import time
 
 class RequestRetryExceededMiddleware(RetryMiddleware):
-    def __init__(self, crawler):
-        super(RequestRetryExceededMiddleware, self).__init__(crawler.settings)
-        self.crawler = crawler
+    def __init__(self, StoryScraper):
+        super(RequestRetryExceededMiddleware, self).__init__(StoryScraper.settings)
+        self.StoryScraper = StoryScraper
 
     @classmethod
-    def from_crawler(cls, crawler):
-        return cls(crawler)
+    def from_crawler(cls, StoryScraper):
+        return cls(StoryScraper)
     
     def process_response(self, request, response, spider):
         if request.meta.get('dont_retry', False):
             return response
         elif response.status == 429:
-            self.crawler.engine.pause()
+            self.StoryScraper.engine.pause()
             time.sleep(60)
-            self.crawler.engine.unpause()
+            self.StoryScraper.engine.unpause()
             reason = response_status_message(response.status)
             return self._retry(request, reason, spider) or response
         elif response.status in self.retry_http_codes:

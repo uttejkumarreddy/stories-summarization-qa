@@ -11,7 +11,7 @@ BOT_NAME = 'StoryScraper'
 
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
-    'crawler.middlewares.RequestRetryExceededMiddleware': 543,
+    'StoryScraper.middlewares.RequestRetryExceededMiddleware': 543,
 }
 
 SPIDER_MODULES = ['StoryScraper.spiders']
