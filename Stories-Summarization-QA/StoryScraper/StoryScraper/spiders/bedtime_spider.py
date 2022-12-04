@@ -8,9 +8,8 @@ class BedtimeStories(scrapy.Spider):
         super().__init__()
         self.start_urls = []
 
-        # for i in range(1, 50):
-        #     self.start_urls.append(f'https://blog.reedsy.com/short-stories/bedtime/page/{i}/')
-        self.start_urls.append(f'https://blog.reedsy.com/short-stories/bedtime/page/7/')
+        for i in range(1, 50):
+            self.start_urls.append(f'https://blog.reedsy.com/short-stories/bedtime/page/{i}/')
 
     def parse(self, response):
         hrefs = response.xpath("//a[@class = 'btn-blue btn-rounded btn-xxs']/@href").extract()
