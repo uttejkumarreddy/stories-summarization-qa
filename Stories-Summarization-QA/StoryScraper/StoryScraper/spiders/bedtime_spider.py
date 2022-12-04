@@ -1,7 +1,5 @@
-import scrapy
 from StoryScraper.items import StoryscraperItem
-from datetime import datetime
-import re
+import scrapy
 
 class BedtimeStories(scrapy.Spider):
     name = "BedtimeStories"
@@ -10,8 +8,9 @@ class BedtimeStories(scrapy.Spider):
         super().__init__()
         self.start_urls = []
 
-        for i in range(1, 50):
-            self.start_urls.append(f'https://blog.reedsy.com/short-stories/bedtime/page/{i}/')
+        # for i in range(1, 50):
+        #     self.start_urls.append(f'https://blog.reedsy.com/short-stories/bedtime/page/{i}/')
+        self.start_urls.append(f'https://blog.reedsy.com/short-stories/bedtime/page/7/')
 
     def parse(self, response):
         hrefs = response.xpath("//a[@class = 'btn-blue btn-rounded btn-xxs']/@href").extract()
