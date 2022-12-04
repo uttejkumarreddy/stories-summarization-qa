@@ -1,5 +1,5 @@
 import scrapy
-from StoryScraper.items import CrawlerItem
+from StoryScraper.items import StoryscraperItem
 from datetime import datetime
 import re
 
