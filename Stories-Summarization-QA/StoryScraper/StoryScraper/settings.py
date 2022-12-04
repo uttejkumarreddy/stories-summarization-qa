@@ -9,9 +9,15 @@
 
 BOT_NAME = 'StoryScraper'
 
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
+    'crawler.middlewares.RequestRetryExceededMiddleware': 543,
+}
+
 SPIDER_MODULES = ['StoryScraper.spiders']
 NEWSPIDER_MODULE = 'StoryScraper.spiders'
 
+RETRY_HTTP_CODES = [429]
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'StoryScraper (+http://www.yourdomain.com)'
