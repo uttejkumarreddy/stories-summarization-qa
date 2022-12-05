@@ -26,6 +26,8 @@ for json_str in json_list:
     storyEncode = story.encode("ascii", "ignore")
     story = storyEncode.decode()
 
+    story += moral
+
     csvEntry = [title, story, moral]
     csvEntries.append(csvEntry)
 
