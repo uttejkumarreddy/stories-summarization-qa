@@ -33,7 +33,6 @@ The scrapy projects to download aesop fables and short stories from reedsy are i
 
 ### ----------------------------------------- ###
 ### Archive ###
-### ----------------------------------------- ###
 Summarization was done on the first chapter of Harry Potter and the Philosopher's stone using extractive summarization methods provided as part of the 'sumy' package.
 1. lex_rank  
 2. luhn  
