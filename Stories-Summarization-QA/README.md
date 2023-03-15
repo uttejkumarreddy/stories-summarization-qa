@@ -1,3 +1,5 @@
+Project implemented as part of course CMPE 297 - Natural Language Processing
+
 # Stories - Summarization and Question-Answering
 
 ## Scraping
